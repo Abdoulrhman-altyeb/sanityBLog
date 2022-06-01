@@ -102,7 +102,6 @@ const post:NextPage<Props> = ({post}) => {
             body:JSON.stringify(data),
         }).then(() => {
             setDisplay(true)
-            console.log(data)
         }).catch((err) => {
             console.log(err);
         })
