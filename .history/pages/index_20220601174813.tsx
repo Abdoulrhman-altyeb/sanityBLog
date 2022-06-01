@@ -48,7 +48,7 @@ const Home:NextPage<Posts> = ({posts}) => {
       <Banner />
       <section className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-10'>
         {posts.map((single:Post) => (
-            <SinglePost {...single} key={single._id}/>
+            <SinglePost single={single} key={single._id}/>
         ))}
       </section>
 
@@ -56,7 +56,7 @@ const Home:NextPage<Posts> = ({posts}) => {
       <div>
         {posts.map((single,index) => (
             // <SidePost single={single} key={single._id}/>
-            <SidePost {...single} key={single._id}/>
+            <SidePost post=[...single] key={single._id}/>
         ))}
       </div>
 

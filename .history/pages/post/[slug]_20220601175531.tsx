@@ -93,6 +93,7 @@ export const getStaticProps:GetStaticProps = async({params}) => {
 }
 const post:NextPage<Props> = ({post}) => {
 
+
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [display,setDisplay] = useState<boolean>(false)
 
@@ -181,7 +182,7 @@ const post:NextPage<Props> = ({post}) => {
                         <hr className="border border-white my-2" />
                         {post.comments.map((comment:any) => (
                             <p key={comment._id}>{comment.message}</p>
-                        ))}
+                        )):string}
                         <span className="block text-black mt-10">thank you for your comment </span>
                     </div>
                 

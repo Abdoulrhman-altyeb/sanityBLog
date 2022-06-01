@@ -93,6 +93,7 @@ export const getStaticProps:GetStaticProps = async({params}) => {
 }
 const post:NextPage<Props> = ({post}) => {
 
+
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [display,setDisplay] = useState<boolean>(false)
 

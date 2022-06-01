@@ -54,7 +54,7 @@ const Home:NextPage<Posts> = ({posts}) => {
 
       <h1 className='mb-10 border-b-4 border-orang w-fit font-bold text-2xl'>More Blogs</h1>
       <div>
-        {posts.map((single,index) => (
+        {posts.map((single) => (
             // <SidePost single={single} key={single._id}/>
             <SidePost {...single} key={single._id}/>
         ))}

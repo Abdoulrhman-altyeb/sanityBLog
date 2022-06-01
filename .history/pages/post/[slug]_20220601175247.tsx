@@ -93,6 +93,7 @@ export const getStaticProps:GetStaticProps = async({params}) => {
 }
 const post:NextPage<Props> = ({post}) => {
 
+
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [display,setDisplay] = useState<boolean>(false)
 
@@ -136,7 +137,7 @@ const post:NextPage<Props> = ({post}) => {
                         h1: (props:any) => <h1 className="text-2xl font-bold my-5" {...props} />,
                         h2: (props:any) => <h1 className="text-xl font-bold my-5" {...props} />,
                         li: (children:any) => <li className="ml-4 list-disc" {...children}/>,
-                        link: ({href,children}:any) => <a href={href} className='text-orang underline'>{children}</a>,
+                        link: ({href,children}) => <a href={href} className='text-orang underline'>{children}</a>,
                     }}
                 />
                 <hr className="w-full my-10 border border-orang"/>
@@ -179,7 +180,7 @@ const post:NextPage<Props> = ({post}) => {
                  <div className="text-white font-bold bg-orang px-4 py-8 mt-10">
                         <h1 className="font-bold text-2xl text-white">Comments</h1>
                         <hr className="border border-white my-2" />
-                        {post.comments.map((comment:any) => (
+                        {post.comments.map((comment) => (
                             <p key={comment._id}>{comment.message}</p>
                         ))}
                         <span className="block text-black mt-10">thank you for your comment </span>

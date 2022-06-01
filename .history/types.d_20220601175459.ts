@@ -12,6 +12,9 @@ export interface Post {
     },
     'comments':{
         message:string,
+        map:() =>{
+            
+        }
     }
     ,
     description:string,

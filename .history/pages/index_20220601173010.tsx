@@ -47,17 +47,20 @@ const Home:NextPage<Posts> = ({posts}) => {
       {/* banner  */}
       <Banner />
       <section className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-10'>
-        {posts.map((single:Post) => (
-            <SinglePost {...single} key={single._id}/>
-        ))}
+        {posts.map((single:Post) => {
+            return(
+                  <SinglePost single={single:Post} key={single._id}/>
+              )
+            })}
       </section>
 
       <h1 className='mb-10 border-b-4 border-orang w-fit font-bold text-2xl'>More Blogs</h1>
       <div>
-        {posts.map((single,index) => (
-            // <SidePost single={single} key={single._id}/>
-            <SidePost {...single} key={single._id}/>
-        ))}
+        {posts.map((single) => {
+          return(
+            <SidePost single={single} key={single._id}/>
+          )
+        })}
       </div>
 
     </main>

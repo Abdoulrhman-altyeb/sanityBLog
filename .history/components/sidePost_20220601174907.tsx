@@ -4,7 +4,7 @@ import React from 'react'
 import { urlFor } from '../sanity'
 import { Post } from '../types'
 
-const SidePost:NextPage<Post> = ({title,slug,author,description,mainImage}) => {
+const SidePost:NextPage<Post> = ({title,slug,author,}) => {
   return (
     <Link href={`/post/${slug.current}`}>
         <div className='flex shadow-custom justify-between cursor-pointer mb-10 p-2 overflow-hidden group'>

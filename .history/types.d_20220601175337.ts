@@ -11,7 +11,7 @@ export interface Post {
         },
     },
     'comments':{
-        message:string,
+        message:string
     }
     ,
     description:string,

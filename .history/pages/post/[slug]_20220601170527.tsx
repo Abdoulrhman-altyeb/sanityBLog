@@ -11,7 +11,6 @@ interface Props {
     post : Post
 }
 
-
 interface IFormInputs {
     _id:string,
     name:string,
@@ -93,6 +92,8 @@ export const getStaticProps:GetStaticProps = async({params}) => {
 }
 const post:NextPage<Props> = ({post}) => {
 
+    console.log(post.comments)
+
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [display,setDisplay] = useState<boolean>(false)
 
@@ -133,10 +134,11 @@ const post:NextPage<Props> = ({post}) => {
                     dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                     projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}    
                     serializers={{
-                        h1: (props:any) => <h1 className="text-2xl font-bold my-5" {...props} />,
-                        h2: (props:any) => <h1 className="text-xl font-bold my-5" {...props} />,
-                        li: (children:any) => <li className="ml-4 list-disc" {...children}/>,
-                        link: ({href,children}:any) => <a href={href} className='text-orang underline'>{children}</a>,
+                        h1: props => <h1 className="text-2xl font-bold my-5" {...props} />,
+                        h2: props => <h1 className="text-xl font-bold my-5" {...props} />,
+                        li: children => <li className="ml-4 list-disc" {...children}/>,
+                        link: ({href,children}) => <a href={href} className='text-orang underline'>{children}</a>,
+                        img: ({src}) => <img className="roudned" src={urlFor(src).url()} alt='blogImage'/>
                     }}
                 />
                 <hr className="w-full my-10 border border-orang"/>
@@ -179,7 +181,7 @@ const post:NextPage<Props> = ({post}) => {
                  <div className="text-white font-bold bg-orang px-4 py-8 mt-10">
                         <h1 className="font-bold text-2xl text-white">Comments</h1>
                         <hr className="border border-white my-2" />
-                        {post.comments.map((comment:any) => (
+                        {post.comments.map((comment) => (
                             <p key={comment._id}>{comment.message}</p>
                         ))}
                         <span className="block text-black mt-10">thank you for your comment </span>

@@ -1,14 +1,13 @@
 import { NextPage } from "next"
 import Link from "next/link";
 import { urlFor } from "../sanity";
-import { Post } from "../types";
 
 // interface Props {
 //     // single:Post
 //     key:string;
 // }
 
-const SinglePost:NextPage<Post> = ({title,slug,author,description,mainImage}) => {
+const SinglePost:NextPage = ({title,slug,author,description,mainImage}) => {
   return (
     <Link href={`/post/${slug.current}`}>
             <div className="flex shadow-custom flex-col cursor-pointer group">
