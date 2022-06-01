@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@base {
+    body{
+        font-family: 'IM Fell English SC', serif;
+    }
+}

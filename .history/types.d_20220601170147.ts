@@ -1,0 +1,29 @@
+export interface Post {
+    _id:string,
+    _createdAt?:string,
+    title:string,
+    author:{
+        name:string,
+        image:{
+            asset:{
+                _ref:string
+            }
+        },
+    },
+    'comments':{
+        name:string,
+        email:string,
+        message:string
+    }
+    ,
+    description:string,
+    slug:{
+        current:string
+    },
+    mainImage:{
+        asset:{
+            _ref:string
+        }
+    },
+    body:[object]
+}
